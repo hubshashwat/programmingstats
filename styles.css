@@ -1,0 +1,86 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f4; /* Light mode background */
+  color: #333; /* Light mode text color */
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+.link-button {
+    display: inline-block;
+    padding: 9px 6px; /* Increased padding for a bigger button */
+    margin: 20px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    border-radius: 8px; /* Rounded corners */
+    font-weight: bold;
+    font-size: 10px; /* Increase font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.link-button:hover {
+    background-color: orange; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.link-button:active {
+    transform: translateY(0); /* Reset lift when clicked */
+}
+
+
+#graph-section {
+  width: 80%;
+  max-width: 600px;
+  margin-top: 30px;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Loader styles */
+#loader {
+  display: none;
+  font-size: 24px;
+  color: #007bff; /* Loader text color */
+}
+
+/* Dark mode loader text */
+body.dark-mode #loader {
+  color: #e9ecef; /* Dark mode loader text color */
+}
+
+/* Loader styles */
+.loader-container .spinner {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #007bff;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.container {
+    border: 65px solid black; /* Adjust thickness and color as needed */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add some padding inside the border */
+    max-width: 800px; /* Optional: limit the width */
+    margin: 20px auto; /* Center the container */
+    background-color: #f4f4f4; /* Background color */
+}

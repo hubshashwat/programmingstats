@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmer Statistics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 30px;
+        }
+        .button {
+            padding: 9px 5px;
+            font-size: 12px;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+        .button:hover {
+            background-color: orange;
+            transform: scale(1.05);
+        }
+        #loader {
+            display: none;
+            font-size: 24px;
+            color: #007bff;
+            margin-top: 20px;
+        }
+        .loader-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .loader-container .spinner {
+            width: 30px;
+            height: 30px;
+            border: 5px solid #007bff;
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Programmer Statistics (2024) </h1>
+    <button class="button" onclick="loadPage('lang.html')">Most Used Programming Languages</button>
+    <button class="button" onclick="loadPage('gender-distribution.html')">Worldwide Gender Distribution</button>
+    <button class="button" onclick="loadPage('age-distribution.html')">Developers [Age Group]</button>
+    <button class="button" onclick="loadPage('web-frameworks.html')">Most Used Web Frameworks</button>
+
+    <div id="loader" class="loader-container">
+        <div class="spinner"></div>
+        <div>Loading Stats...</div>
+    </div>
+
+    <script>
+    function loadPage(page) {
+        // Show the loader
+        document.getElementById('loader').style.display = 'flex';
+
+        // Simulate a loading delay
+        setTimeout(() => {
+            window.location.href = page; // Redirect to the selected page
+        }, 1000); // Simulated loading time of 1 second
+    }
+
+    function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle("dark-mode");
+
+        // Save preference in localStorage
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("dark-mode", "enabled");
+        } else {
+            localStorage.removeItem("dark-mode");
+        }
+    }
+
+    window.onload = function() {
+        if (localStorage.getItem("dark-mode") === "enabled") {
+            document.body.classList.add("dark-mode");
+        }
+    };
+</script>
+
+</body>
+</html>
